@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">OneTwoThreeAndroid</string>
+    <string name="dummy_image">Dummy Image</string>
+    <string name="buy">Buy</string>
+    <string name="production">Production</string>
+    <string name="choose_payment_method">Choose Payment Method</string>
+    <string name="pay">Pay</string>
+    <string name="custom">Custom</string>
+
+    <!--  Custom  -->
+    <string name="merchant_id">Merchant Id</string>
+    <string name="confirm">Confirm</string>
+</resources>

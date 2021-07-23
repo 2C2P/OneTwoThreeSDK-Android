@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+                name="BankType"
+                type="com.ccpp.onetwothreedemo.detail.PaymentType" />
+
+        <variable
+                name="viewModel"
+                type="com.ccpp.onetwothreedemo.detail.DetailViewModel" />
+    </data>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/primary"
+                    app:navigationIcon="@drawable/ic_arrow_back"
+                    app:title="Payment"
+                    app:titleTextColor="@color/white"
+                    />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_payment_method"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="24dp"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkGreenColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+                android:id="@+id/scb"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/scb"
+                android:foreground="@drawable/button_background_state"
+                android:textOff=""
+                android:textOn=""
+                android:text=""
+                android:scaleType="fitCenter"
+                android:onClick="@{() -> viewModel.selectBank(scb)}"
+                android:checked="@={viewModel.scbSelected}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+                android:id="@+id/bay"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/bay"
+                android:foreground="@drawable/button_background_state"
+                android:textOff=""
+                android:textOn=""
+                android:text=""
+                android:scaleType="fitCenter"
+                android:onClick="@{() -> viewModel.selectBank(bay)}"
+                android:checked="@={viewModel.baySelected}"
+                app:layout_constraintStart_toEndOf="@id/scb"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatToggleButton
+                android:id="@+id/bbl"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/bbl"
+                android:foreground="@drawable/button_background_state"
+                android:textOff=""
+                android:textOn=""
+                android:text=""
+                android:scaleType="fitCenter"
+                android:onClick="@{() -> viewModel.selectBank(bbl)}"
+                android:checked="@={viewModel.bblSelected}"
+                app:layout_constraintStart_toEndOf="@id/bay"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:ignore="ContentDescription" />
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pay"
+                android:text="@string/pay"
+                android:layout_margin="16dp"
+                android:layout_width="0dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/darkGreenColor"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.pay()}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+                android:id="@+id/totalPayment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Payment"
+                android:textColor="@color/primary"
+                android:textSize="18sp"
+                android:layout_marginVertical="16dp"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/pay"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="฿1.00"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginVertical="16dp"
+                android:layout_marginHorizontal="20dp"
+                app:layout_constraintBottom_toTopOf="@+id/pay"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

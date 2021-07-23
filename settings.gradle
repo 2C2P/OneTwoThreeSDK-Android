@@ -1,0 +1,3 @@
+include ':OneTwoThreeSDK'
+include ':app'
+rootProject.name = "OneTwoThreeAndroid"
