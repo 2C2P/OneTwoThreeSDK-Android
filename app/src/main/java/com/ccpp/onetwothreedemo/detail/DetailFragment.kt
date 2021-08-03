@@ -1,20 +1,14 @@
 package com.ccpp.onetwothreedemo.detail
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.ccpp.onetwothreedemo.R
 import com.ccpp.onetwothreedemo.databinding.FragmentDetailBinding
 import com.ccpp.onetwothreedemo.model.Product
 import com.ccpp.onetwothreedemo.util.LoadingDialog
@@ -63,7 +57,7 @@ class DetailFragment : Fragment() {
                 try {
                     val launcher = Intent(Intent.ACTION_VIEW)
                     launcher.data = Uri.parse(event.res.deeplinkURL)
-                    startActivity(launcher)
+                    startActivityForResult(launcher, 1000)
                 } catch (e: Exception) {
                     showErrorDialog(
                         title = "Unable to open ${model.paymentMethod.value?.name} app",

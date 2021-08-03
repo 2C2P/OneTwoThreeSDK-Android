@@ -82,7 +82,7 @@ OneTwoThreeSDKService.startDeeplink(merchant, transaction, buyer, object :
             // NOTE: Redirect to bank app using 'deeplinkURL' from the response.
             val launcher = Intent(Intent.ACTION_VIEW)
             launcher.data = Uri.parse(response.deeplinkURL)
-            startActivity(launcher)
+            startActivityForResult(launcher, 1000)
         } catch (e: Exception) {
             e.printStackTrace()
         }

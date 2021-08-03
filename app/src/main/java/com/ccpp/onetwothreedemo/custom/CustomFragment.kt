@@ -155,7 +155,7 @@ class CustomFragment : Fragment() {
                 try {
                     val launcher = Intent(Intent.ACTION_VIEW)
                     launcher.data = Uri.parse(event.res.deeplinkURL)
-                    startActivity(launcher)
+                    startActivityForResult(launcher, 1000)
                 } catch (e: Exception) {
                     showErrorDialog(
                         title = "Unable to open ${transaction?.preferredAgent} app",
