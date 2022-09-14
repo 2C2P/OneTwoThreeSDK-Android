@@ -13,7 +13,8 @@
             android:roundIcon="@mipmap/ic_123_app_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.OneTwoThreeAndroid">
-        <activity android:name="com.ccpp.onetwothreedemo.MainActivity">
+        <activity android:name="com.ccpp.onetwothreedemo.MainActivity"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
